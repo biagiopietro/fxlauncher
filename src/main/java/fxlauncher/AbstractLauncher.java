@@ -147,6 +147,7 @@ public abstract class AbstractLauncher<APP>  {
         if (uri.getScheme().equals("file")) return Files.newInputStream(new File(uri.getPath()).toPath());
 
         URLConnection connection = uri.toURL().openConnection();
+        connection.addRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:25.0) Gecko/20100101 Firefox/25.0");
         if (uri.getUserInfo() != null) {
             byte[] payload = uri.getUserInfo().getBytes(StandardCharsets.UTF_8);
             String encoded = Base64.getEncoder().encodeToString(payload);
