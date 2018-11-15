@@ -25,6 +25,7 @@ public class HeadlessMainLauncher extends AbstractLauncher<Object>
 
     public static void main(String[] args) throws Exception
     {
+        System.setProperty("http.agent", "Chrome");
         List<String> mainArgs = Arrays.asList(args);
 
         LauncherParams parameters = new LauncherParams(mainArgs);
